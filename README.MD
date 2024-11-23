@@ -1,4 +1,4 @@
-# @zenos/img-compress
+# @zenos-chen/img-compress
 
 这是一个图片压缩cli工具，用来实现最简单的压缩功能。
 
