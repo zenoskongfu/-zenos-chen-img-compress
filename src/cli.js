@@ -12,13 +12,21 @@ cli.command("[...args]", "input args")
 	.option("-r, --ratio [ratio]", "the compress ratio")
 	.action((args, options) => {
 		const res = {};
-		res.input = args[0] || options.input || null;
+
+		res.input = options.input || args[0] || null;
+
 		res.output =
-			args[1] ||
 			options.output ||
+			(options.input ? args[0] : args[1]) ||
 			(res.input ? res.input.replace(path.extname(res.input), "-low" + path.extname(res.input)) : null);
-		res.ratio = args[2] || options.ratio || 0.1;
+
+		res.ratio =
+			options.ratio ||
+			(options.input && options.output ? args[0] : options.input || options.output ? args[1] : args[2]) ||
+			0.1;
+
 		const NotArgsOk = Object.values(res).some((value) => !value);
+
 		if (NotArgsOk) {
 			console.log("args not ok");
 			return;

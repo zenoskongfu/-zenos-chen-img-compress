@@ -1,22 +1,23 @@
 {
-	"name": "@zenos/img-compress",
+	"name": "@zenos-chen/img-compress",
 	"version": "1.0.0",
+	"description": "这是一个非常简单的，上手可用的图片压缩cli工具",
+	"author": "zenos,chen",
 	"main": "./src/compress.js",
 	"keywords": [
 		"img",
 		"compress"
 	],
-	"author": "",
 	"license": "ISC",
-	"description": "",
 	"dependencies": {
 		"cac": "^6.7.14",
 		"sharp": "^0.33.5"
 	},
 	"bin": {
-		"img-compress": "./bin/cli"
+		"img-compress": "bin/cli"
 	},
 	"files": [
-		"."
+		"bin",
+		"src"
 	]
 }
